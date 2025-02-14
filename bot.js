@@ -9,9 +9,17 @@ const bot = new TelegramBot(token, { polling: true });
 
 
 bot.on('message', (msg) => {
-    console.log(msg)
-    // const chatId = msg.chat.id;
+    const chatId = msg.chat.id;
+
+    const userText = msg.text;
+
+    if (userText == '/start') {
+        bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
+    }
 
     // send a message to the chat acknowledging receipt of their message
     // bot.sendMessage(chatId, 'Received your message');
 });
+
+
+console.log("bot is started");
