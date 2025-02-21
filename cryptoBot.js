@@ -18,7 +18,7 @@ bot.on("text", async (msg) => {
         bot.sendMessage(chatId, 'به ربات قیمت لحظه ای نوبیتکس خوش آمدید', {
             reply_markup: {
                 keyboard: [
-                    { text: "لیست نماد ها 📃" }
+                    [{ text: "لیست نماد ها 📃" }]
                 ],
                 resize_keyboard: true,
                 one_time_keyboard: false
