@@ -20,7 +20,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید", {
             "reply_markup": {
                 "keyboard": [
-                    ["سلام", "خداحافظ"]
+                    ["سلام", "خداحافظ"],
                     ["تست 1", "تست 2"]
                 ]
             }
