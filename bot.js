@@ -18,9 +18,14 @@ bot.on('message', (msg) => {
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
     }
 
-    if(userText=="salam"){
+    if (userText == "salam") {
         bot.sendMessage(chatId, "سلام خوش آمدید");
     }
+
+    bot.sendMessage(chatId, "دستور ارسال شده تعریف نشده");
+
+
+
 
     // send a message to the chat acknowledging receipt of their message
     // bot.sendMessage(chatId, 'Received your message');
