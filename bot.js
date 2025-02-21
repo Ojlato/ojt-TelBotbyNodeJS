@@ -1,12 +1,13 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = '7608384399:AAE5HsHrxVS7tX4AIri8QdSX83_bmIV_AKI';
+const token = '7268996065:AAGRiMGVircHQXC_B2gCZfzjNIFxQg0YRdw';
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, { polling: true });
 
 
+const regex = /^\/start$/;
 
 bot.on('message', (msg) => {
     const chatId = msg.chat.id;
@@ -14,6 +15,10 @@ bot.on('message', (msg) => {
     const userText = msg.text;
 
     if (userText == '/start') {
+        bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
+    }
+
+    if (regex.test(userText)) {
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
     }
 
