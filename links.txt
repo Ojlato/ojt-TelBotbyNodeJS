@@ -1,0 +1,2 @@
+"https://api.nobitex.net/v2/orderbook/all"
+`https://api.nobitex.ir/market/udf/history?symbol=BTCIRT&resolution=D&from=${from}&to=${to}`
