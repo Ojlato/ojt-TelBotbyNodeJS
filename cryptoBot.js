@@ -11,11 +11,19 @@ const { default: axios } = require('axios');
 bot.on("text", async (msg) => {
     const chatId = msg.chat.id;
     const userMessage = msg.text;
-    let notControllerMessage = true;
+    const notControllerMessage = true;
 
     if (userMessage == "/start") {
         notControllerMessage = false;
-        bot.sendMessage(chatId, 'به ربات قیمت لحظه ای نوبیتکس خوش آمدید');
+        bot.sendMessage(chatId, 'به ربات قیمت لحظه ای نوبیتکس خوش آمدید', {
+            reply_markup: {
+                keyboard: [
+                    ["لیست نماد ها 📃"]
+                ]
+            }
+        });
+
+        
     }
 
 
@@ -24,5 +32,7 @@ bot.on("text", async (msg) => {
     if (notControllerMessage) {
         bot.sendMessage(chatId, 'لطفا از دستورات موجود استفاده کنید');
     }
+
+
 
 })
