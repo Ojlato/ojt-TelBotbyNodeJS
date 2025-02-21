@@ -48,6 +48,7 @@ bot.on("text", async (msg) => {
     }
 
     if (userMessage == "لیست نماد ها 📃") {
+        notControllerMessage = false;
         bot.sendMessage(chatId, symbolsMessage)
     }
 
