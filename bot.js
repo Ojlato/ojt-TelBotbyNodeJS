@@ -18,8 +18,8 @@ bot.on('message', (msg) => {
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
     }
 
-    if (regex.test(userText)) {
-        bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
+    if(userText=="salam"){
+        bot.sendMessage(chatId, "سلام خوش آمدید");
     }
 
     // send a message to the chat acknowledging receipt of their message
