@@ -24,8 +24,6 @@ bot.on("text", async (msg) => {
                 one_time_keyboard: false
             }
         });
-
-
     }
 
 
