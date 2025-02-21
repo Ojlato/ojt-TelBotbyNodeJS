@@ -19,15 +19,32 @@ bot.on('message', (msg) => {
         tarifShode = true;
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید", {
             "reply_markup": {
-                "keyboard": ["سلام", "خداحافظ"],
-                "resize_keyboard": true
+                "keyboard": [
+                    ["سلام", "خداحافظ"]
+                    ["تست 1", "تست 2"]
+                ]
             }
         });
     }
 
-    if (userText == "salam") {
+    if (userText == "سلام") {
         tarifShode = true;
         bot.sendMessage(chatId, "سلام خوش آمدید");
+    }
+
+    if (userText == "خداحافظ") {
+        tarifShode = true;
+        bot.sendMessage(chatId, "پیام خداحافظ");
+    }
+
+    if (userText == "تست 1") {
+        tarifShode = true;
+        bot.sendMessage(chatId, "پیام تست 1");
+    }
+
+    if (userText == "تست 2") {
+        tarifShode = true;
+        bot.sendMessage(chatId, "پیام تست 2");
     }
 
     if (!tarifShode) {
