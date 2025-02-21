@@ -17,8 +17,18 @@ bot.on('message', (msg) => {
 
     if (userText == '/start') {
         tarifShode = true;
-        bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
+        bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید", {
+            reply_markup: {
+                keyboard: [
+                    ["دکمه ۱", "دکمه ۲"],
+                    ["دکمه ۳", "دکمه ۴"]
+                ],
+                resize_keyboard: true, // Adjusts keyboard size to fit screen
+                one_time_keyboard: false // Keeps the keyboard open
+            }
+        });
     }
+
 
     if (userText == "salam") {
         tarifShode = true;
