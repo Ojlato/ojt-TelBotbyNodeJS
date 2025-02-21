@@ -10,19 +10,24 @@ const bot = new TelegramBot(token, { polling: true });
 const regex = /^\/start$/;
 
 bot.on('message', (msg) => {
+    let tarifShode = false;
     const chatId = msg.chat.id;
 
     const userText = msg.text;
 
     if (userText == '/start') {
+        tarifShode = true;
         bot.sendMessage(chatId, "به ربات تلگرامی من خوش آمدید");
     }
 
     if (userText == "salam") {
+        tarifShode = true;
         bot.sendMessage(chatId, "سلام خوش آمدید");
     }
 
-    bot.sendMessage(chatId, "دستور ارسال شده تعریف نشده");
+    if (!tarifShode) {
+        bot.sendMessage(chatId, "دستور ارسال شده تعریف نشده");
+    }
 
 
 
