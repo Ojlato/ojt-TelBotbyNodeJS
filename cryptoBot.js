@@ -11,7 +11,7 @@ const { default: axios } = require('axios');
 bot.on("text", async (msg) => {
     const chatId = msg.chat.id;
     const userMessage = msg.text;
-    const notControllerMessage = true;
+    let notControllerMessage = true;
 
     if (userMessage == "/start") {
         notControllerMessage = false;
@@ -23,7 +23,7 @@ bot.on("text", async (msg) => {
             }
         });
 
-        
+
     }
 
 
