@@ -41,7 +41,7 @@ async function getPrice(symbol) {
     }
 }
 
-const checkingSymbolRegex = `/irt$/i`;
+const checkingSymbolRegex = /irt$/i;
 bot.on("text", async (msg) => {
     const chatId = msg.chat.id;
     const userMessage = msg.text;
