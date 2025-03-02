@@ -67,6 +67,8 @@ bot.on("text", async (msg) => {
 
     if (checkingSymbolRegex.test(userMessage)) {
         const price = await getPrice(userMessage)
+        notControllerMessage = false;
+
         bot.sendMessage(chatId, `قیمت نماد مورد نظر ${price} تومان است`);
     }
 
