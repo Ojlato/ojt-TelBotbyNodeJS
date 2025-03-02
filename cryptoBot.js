@@ -46,7 +46,7 @@ bot.on("text", async (msg) => {
     const chatId = msg.chat.id;
     const userMessage = msg.text;
     let notControllerMessage = true;
-    console.log(msg)
+    console.log(userMessage)
     if (userMessage == "/start") {
         notControllerMessage = false;
         bot.sendMessage(chatId, 'به ربات قیمت لحظه ای نوبیتکس خوش آمدید', {
