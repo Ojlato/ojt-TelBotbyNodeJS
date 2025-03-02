@@ -66,10 +66,10 @@ bot.on("text", async (msg) => {
     }
 
 
-    if (checkingSymbolRegex.test(userMessage)) {
-        const price = await getPrice(userMessage)
-        bot.sendMessage(chatId, `قیمت نماد مورد نظر ${price} تومان است`);
-    }
+    // if (checkingSymbolRegex.test(userMessage)) {
+    //     const price = await getPrice(userMessage)
+    //     bot.sendMessage(chatId, `قیمت نماد مورد نظر ${price} تومان است`);
+    // }
 
 
 
