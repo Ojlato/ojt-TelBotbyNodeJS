@@ -25,10 +25,23 @@ async function getSymbolsListMessage() {
 
 
 
-getSymbolsListMessage()
+// getSymbolsListMessage()
 
 
+async function getPrice(symbol) {
 
+    const to = Math.floor(Date.now() / 1000);
+
+    const from = to - 86400
+
+    const response = await axios.get(`https://api.nobitex.ir/market/udf/history?symbol=${symbol}&resolution=D&from=${from}&to=${to}`)
+    console.log(response.data)
+    if (response.data["s"] == "ok") {
+        return response.data["c"]
+    }
+}
+
+const checkingSymbolRegex = `/irt$/i`;
 bot.on("text", async (msg) => {
     const chatId = msg.chat.id;
     const userMessage = msg.text;
@@ -52,6 +65,11 @@ bot.on("text", async (msg) => {
         bot.sendMessage(chatId, symbolsMessage)
     }
 
+
+    if (checkingSymbolRegex.test(userMessage)) {
+        const price = await getPrice(userMessage)
+        bot.sendMessage(chatId, `قیمت نماد مورد نظر ${price} تومان است`);
+    }
 
 
 
